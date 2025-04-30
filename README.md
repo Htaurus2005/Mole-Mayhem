@@ -23,12 +23,54 @@ The code I am most proud of is
 
 Helina: 
 
-The code I am most proud of is, 
+The code I am most proud of is, My favorite part of the code is setting up the background or the “lawn”. And also when Katie added the timer and score count it made our theme come togther.
+```
+if(gameStart === true) {
+    imageMode(CORNER);
+    image(Bgimg, 0, 0, width, height, 10, 0, Bgimg.width, Bgimg.height, COVER);
 
-The hardest part of our code for me, was 
+  draw(){
+    let visibleMilliseconds = floor(this.milliseconds / 10);
+    fill('pink');
+    text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + ":" + nf(visibleMilliseconds, 2), (width / 2) - 75, 25);
+  }
+}
+```
+
+The hardest part of our code for me, was getting the sound to work in the right spot. I wanted the sound to start and stop where I wanted to without interferring with the other code.
+```
+function preload() {
+  Bgimg = loadImage('background.png');
+  soundFormats("mp3"); //Will format the audio
+  audio = loadSound("best-game-console.mp3");
+}
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+  clocks.push(new Clock());
+  moles.push(new Mole());
+  scoreboard = new Scoreboard();
+  audio.play(); //Starts the background music
+  audio.loop(); //Will keep music playing
+  noCursor(); 
+}
+
+function draw() {
+  background(220);
+  if(keyCode === ENTER) {
+    gameStart = true;
+    gameEnd = false;
+    userStartAudio();
+  }
+```
 
 # What We Did Differently
+We used state in our previous game,  however, this time around we had a better understanding of it on what we could make it do. 
 
+We did find a way to incorporate classes from our unit object oriented programming for our mole.
+
+We also used map and filter to keep score and label the scores from highest to lowest.
 
 
 
