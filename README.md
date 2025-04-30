@@ -69,15 +69,51 @@ function draw() {
 We used state in our previous game,  however, this time around we had a better understanding of it on what we could make it do. 
 
 We did find a way to incorporate classes from our unit object oriented programming for our mole.
+```
+class Clock {
+  constructor () {
+    this.lastMillis = 0;
+    this.milliseconds = 0;
+    this.seconds = 0;
+    this.minutes = 0;
+    this.running = true;
+  }
+  update() {
+    let currentMillis = millis();
+    let timeSince = currentMillis - this.lastMillis;
+    this.milliseconds += timeSince;
+
+    if(this.milliseconds >= 1000){
+      this.seconds += 1;
+      this.milliseconds -= 1000;
+    }
+    if(this.seconds === 60){
+      this.minutes += 1;
+      this.seconds = 0;
+    }
+    this.lastMillis = currentMillis;
+  }
+  totalTime() {
+    return this.milliseconds + this.seconds * 1000 + this.minutes * 60000;
+  }
+  
+  draw(){
+    let visibleMilliseconds = floor(this.milliseconds / 10);
+    fill('pink');
+    text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + ":" + nf(visibleMilliseconds, 2), (width / 2) - 75, 25);
+  }
+}
+```
 
 We also used map and filter to keep score and label the scores from highest to lowest.
+```
 
-
+```
 
 # Credits
 Shoutout to Krzysztof Szymanski from Pixabay for the background music. Their only requirement was to give them credit.
 
-Our background is from https://www.vecteezy.com/vector-art/14572097-background-of-green-grass-field-cartoon-drawing
+Our game background is from https://www.vecteezy.com/vector-art/14572097-background-of-green-grass-field-cartoon-drawing
 
 p5.js Reference
 https://p5js.org/reference/
