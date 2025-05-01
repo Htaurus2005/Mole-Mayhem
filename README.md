@@ -8,7 +8,7 @@ This game is Mole Mayhem Is a fast paced reaction time game. It is our a take on
 How to play:
 
 Playing Mole Mayhem is simple. Martin and his friends having plotting for you land. DON’T let them take over your beautiful lawn. You need to hit 10 moles as fast as you can. You will be timed! 
-Once you hit 10 the game will end display your score as well as previous score. 
+Once you hit 10 the game will end display your score as well as previous scores in order of fastest to slowest. Hitting ENTER again will allow for you to try for a better time.
 
 
 # Favorite Code and Its Challeneges
