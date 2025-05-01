@@ -207,5 +207,5 @@ Our game background is from https://www.vecteezy.com/vector-art/14572097-backgro
 p5.js Reference
 https://p5js.org/reference/
 
-JS Tutorial - w3schools
+JS Tutorial - w3schools 
 https://www.w3schools.com/js/default.asp
