@@ -144,22 +144,18 @@ function keyPressed() {
   }
 }
 ```
-With our High Score page by creating 
+We wanted to have best times displayed at the end, so we used a higher order procedure sort() to modify the elements in the array.
 ```
-function keyPressed() {
- if(keyCode === ENTER && !state.isRun()) {
-    state.setRun();
-    moleScore.reset();
-    userStartAudio();
-    if(audioStarted === false) {
-      audio.play(); //Starts the background music
-      audio.loop(); //Will keep music playing
-      audioStarted = true;
-    }
-    clocks[0].reset();
-    clocks[0].running = true;
+class RecentTimes {
+  constructor() {
+    this.topTimes = [];
   }
-}
+  updateNewTimes(newTimeMillis) {
+    this.topTimes.push(newTimeMillis);
+		this.topTimes.sort(function(a,b) {
+      return a - b;
+    });
+  }
 ```
 
 We did find a way to incorporate classes from our unit object oriented programming for our mole.
