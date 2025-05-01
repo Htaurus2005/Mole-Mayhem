@@ -36,10 +36,6 @@ update() {
     return this.milliseconds + this.seconds * 1000 + this.minutes * 60000;
   }
 ```
-My favorite part of the code was utilizing the sort() HOP to arrange the recent times to make a “best times” ranking on the end screen. 
-```
-
-```
 
 Helina: 
 
